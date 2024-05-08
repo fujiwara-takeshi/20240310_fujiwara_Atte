@@ -15,7 +15,7 @@
 　１．`docker-compose exec php bash`</br>
 　２．`composer install`</br>
 　３．「.env.example」ファイルを 「.env」ファイルに命名を変更。または、新しく.envファイルを作成</br>
-　４．.envに以下の環境変数を追加</br>
+　４．「.env」ファイルに以下の環境変数を追加</br>
 　　`DB_CONNECTION=mysql`</br>
 　　`DB_HOST=mysql`</br>
 　　`DB_PORT=3306`</br>
@@ -33,23 +33,25 @@
 　　`MAIL_ENCRYPTION=tls`</br>
 　　`MAIL_FROM_ADDRESS=送信元に設定するgmailのアドレス`</br>
 　　`MAIL_FROM_NAME="Atte"`</br>
-　　
-  ※アプリパスワードの発行方法は以下のWebサイトを参照願います。</br>
+
+　※アプリパスワードの発行方法は以下のWebサイトを参照願います。</br>
 　　https://qiita.com/koru1893/items/e30d19ac97eac59b1e19</br>
-  ※現状は開発者のgmailアカウントを設定しています。</br>
-  
+　※現状は開発者のgmailアカウントを設定しています。</br>
+
+#### アプリケーションキーの作成
+　`php artisan key:generate`</br>
+
+#### マイグレーションの実行
+　`php artisan migrate`</br>
+
 ## 利用手順
 　１．下記URLにアクセス</br>
-　　http://54.248.30.178</br>
+　　http://localhost/</br>
 　２．ユーザー新規登録ページにて登録処理</br>
 　３．登録メールアドレス宛に確認メールが届くので、認証する</br>
-　４．自動的に打刻ページに遷移し、ご利用いただけます</br>
+　４．自動的に打刻ページに遷移</br>
 
-　以降はログインページよりログインしご利用ください</br>
-
-#### ※ご注意事項</br>
-　現在上記URLにはWeb上のどこからでもアクセスできる状態になっております。</br>
-　セキュリティ上のリスクが伴いますので、社内ネットワーク等に組み込んでの運用を推奨いたします。</br>
+　以降はログインページよりログインしご利用いただけます。</br>
 
 ## 機能一覧
 　・ユーザーログイン機能</br>
@@ -67,16 +69,9 @@
 　データベースエンジン：MySQL 8.0.26</br>
 　コンテナサービス：Docker 20.10.25</br>
 　　　　　　　　　　Docker Compose 2.4.1</br>
-　アプリケーションサーバー：AWS EC2</br>
-　データベースサーバー：AWS RDS</br>
 
 ## データベーステーブル設計書
 ![スクリーンショット 2024-05-08 171845](https://github.com/fujiwara-takeshi/20240310_fujiwara_Atte_EC2/assets/151005520/b26220b1-e4c4-4145-a87a-1a5785f86668)
 
 ## ER図
 ![スクリーンショット 2024-05-08 172017](https://github.com/fujiwara-takeshi/20240310_fujiwara_Atte_EC2/assets/151005520/802c7692-b862-4dc0-a087-d744a5e929af)
-
-## その他
-　AWSサーバーの保守管理に必要な下記項目については別途お打ち合わせを要します。</br>
-　・EC2サーバーログイン用キーペア[Atte_keypair.pem]の譲渡</br>
-　・AWS IAMユーザー登録設定</br>
