@@ -12,9 +12,9 @@
 ３．`docker-compose up -d --build`</br>
 
 #### Laravel環境構築
-１．docker-compose exec php bash
-２．composer install
-３．「.env.example」ファイルを 「.env」ファイルに命名を変更。または、新しく.envファイルを作成
+１．`docker-compose exec php bash`</br>
+２．`composer install`</br>
+３．「.env.example」ファイルを 「.env」ファイルに命名を変更。または、新しく.envファイルを作成</br>
 ４．.envに以下の環境変数を追加
 DB_CONNECTION=mysql
 DB_HOST=mysql
