@@ -6,36 +6,34 @@
 　社員の勤怠管理・人事評価のため
 
 ## 環境構築
-####Dockerビルド
-１．`git clone git@github.com:fujiwara-takeshi/20240310_fujiwara_Atte.git`</br>
-２．DockerDesktopアプリを立ち上げる</br>
-３．`docker-compose up -d --build`</br>
+#### Dockerビルド
+　１．`git clone git@github.com:fujiwara-takeshi/20240310_fujiwara_Atte.git`</br>
+　２．DockerDesktopアプリを立ち上げる</br>
+　３．`docker-compose up -d --build`</br>
 
 #### Laravel環境構築
-１．`docker-compose exec php bash`</br>
-２．`composer install`</br>
-３．「.env.example」ファイルを 「.env」ファイルに命名を変更。または、新しく.envファイルを作成</br>
-４．.envに以下の環境変数を追加
-DB_CONNECTION=mysql
-DB_HOST=mysql
-DB_PORT=3306
-DB_DATABASE=laravel_db
-DB_USERNAME=laravel_user
-DB_PASSWORD=laravel_pass
+　１．`docker-compose exec php bash`</br>
+　２．`composer install`</br>
+　３．「.env.example」ファイルを 「.env」ファイルに命名を変更。または、新しく.envファイルを作成</br>
+　４．.envに以下の環境変数を追加</br>
+　　`DB_CONNECTION=mysql`</br>
+　　`DB_HOST=mysql`</br>
+　　`DB_PORT=3306`</br>
+　　`DB_DATABASE=laravel_db`</br>
+　　`DB_USERNAME=laravel_user`</br>
+　　`DB_PASSWORD=laravel_pass`</br>
+
 #### 認証メールサーバー設定
-　１．AWSのEC2サーバーログイン用のペアキー[Atte_keypair.pem]を任意のフォルダに配置</br>
-　２．ターミナルからペアキーのあるディレクトリに移動</br>
-　３．ペアキーの権限設定</br>
- 　　`chmod 400 "Atte_keypair.pem"`</br>
-　４．EC2サーバーログイン</br>
- 　　`ssh -i "Atte_keypair.pem" ec2-user@ec2-54-248-30-178.ap-northeast-1.compute.amazonaws.com`</br>
-　５．srcディレクトリに移動</br>
- 　　`cd /var/www/laravel/20240310_fujiwara_Atte_EC2/src`</br>
-　６．「.env」ファイルの以下の環境変数を変更（gmailの場合）</br>
+　１．「.env」ファイルの以下の環境変数を変更（gmailの場合）</br>
+　　`MAIL_MAILER=smtp`</br>
+　　`MAIL_HOST=smtp.gmail.com`</br>
+　　`MAIL_PORT=587`</br>
 　　`MAIL_USERNAME=送信元に設定するgmailのアドレス`</br>
-　　`MAIL_FROM_ADDRESS=同上`</br>
 　　`MAIL_PASSWORD=gmailアカウントのアプリパスワード`</br>
-  
+　　`MAIL_ENCRYPTION=tls`</br>
+　　`MAIL_FROM_ADDRESS=送信元に設定するgmailのアドレス`</br>
+　　`MAIL_FROM_NAME="Atte"`</br>
+　　
   ※アプリパスワードの発行方法は以下のWebサイトを参照願います。</br>
 　　https://qiita.com/koru1893/items/e30d19ac97eac59b1e19</br>
   ※現状は開発者のgmailアカウントを設定しています。</br>
