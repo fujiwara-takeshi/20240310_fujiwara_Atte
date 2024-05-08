@@ -7,9 +7,21 @@
 
 ## 環境構築
 ####Dockerビルド
-１．git clone git@github.com:estra-inc/confirmation-test-contact-form.git
-２．DockerDesktopアプリを立ち上げる
-３．docker-compose up -d --build
+１．`git clone git@github.com:fujiwara-takeshi/20240310_fujiwara_Atte.git`</br>
+２．DockerDesktopアプリを立ち上げる</br>
+３．`docker-compose up -d --build`</br>
+
+#### Laravel環境構築
+１．docker-compose exec php bash
+２．composer install
+３．「.env.example」ファイルを 「.env」ファイルに命名を変更。または、新しく.envファイルを作成
+４．.envに以下の環境変数を追加
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
 #### 認証メールサーバー設定
 　１．AWSのEC2サーバーログイン用のペアキー[Atte_keypair.pem]を任意のフォルダに配置</br>
 　２．ターミナルからペアキーのあるディレクトリに移動</br>
