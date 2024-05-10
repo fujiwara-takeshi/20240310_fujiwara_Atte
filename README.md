@@ -24,7 +24,7 @@
 　　`DB_PASSWORD=laravel_pass`</br>
 
 #### 認証メールサーバー設定（gmailの場合）
-　１．「.env」ファイルの以下の環境変数を追加</br>
+　１．「.env」ファイルに以下の環境変数を追加</br>
 　　`MAIL_MAILER=smtp`</br>
 　　`MAIL_HOST=smtp.gmail.com`</br>
 　　`MAIL_PORT=587`</br>
