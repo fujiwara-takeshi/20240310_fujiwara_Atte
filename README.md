@@ -23,8 +23,8 @@
 　　`DB_USERNAME=laravel_user`</br>
 　　`DB_PASSWORD=laravel_pass`</br>
 
-#### 認証メールサーバー設定
-　１．「.env」ファイルの以下の環境変数を変更（gmailの場合）</br>
+#### 認証メールサーバー設定（gmailの場合）
+　１．「.env」ファイルの以下の環境変数を追加</br>
 　　`MAIL_MAILER=smtp`</br>
 　　`MAIL_HOST=smtp.gmail.com`</br>
 　　`MAIL_PORT=587`</br>
@@ -36,7 +36,6 @@
 
 　※アプリパスワードの発行方法は以下のWebサイトを参照願います。</br>
 　　https://qiita.com/koru1893/items/e30d19ac97eac59b1e19</br>
-　※現状は開発者のgmailアカウントを設定しています。</br>
 
 #### アプリケーションキーの作成
 　`php artisan key:generate`</br>
