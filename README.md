@@ -74,3 +74,7 @@
 
 ## ER図
 ![スクリーンショット 2024-05-08 172017](https://github.com/fujiwara-takeshi/20240310_fujiwara_Atte_EC2/assets/151005520/802c7692-b862-4dc0-a087-d744a5e929af)
+
+## URL
+　・開発環境：http://localhost/</br>
+　・phpMyAdmin：http://localhost:8080/</br>
